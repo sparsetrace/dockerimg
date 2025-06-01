@@ -4,6 +4,7 @@ WORKDIR /app
 
 # 1) Minimal OS deps & upgrade pip
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3 python3-pip \
         ca-certificates wget build-essential git && \
     rm -rf /var/lib/apt/lists/*
 
