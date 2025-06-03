@@ -2,13 +2,13 @@ FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
 
 WORKDIR /app
 
-# 1) Minimal OS deps & upgrade pip
+# 1) Minimal OS deps & install Python3 + pip + build tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 python3-pip \
         ca-certificates wget build-essential git && \
     rm -rf /var/lib/apt/lists/*
 
-# 2) pip install all the Python stack we need
+# 2) Upgrade pip & install everything from requirements.txt
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --no-cache-dir \
     numpy \
