@@ -1,4 +1,5 @@
 numpy
+scipy
 jax[cuda12_pip]>=0.4.20
 optax
 flax
